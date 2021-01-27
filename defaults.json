@@ -1,0 +1,197 @@
+{
+   "time": {
+        "tmax": {
+            "type": "float",
+            "doc": "integration time (hours)",
+            "default": 80.0
+        },
+        "dt": {
+            "type": "float",
+            "doc": "time step used in the computation. Can be anything for initial value problem. Should be small enough for the wake and oscillator cases because of the source terms in the complex amplitude equation",
+            "default": 0.01
+        },
+        "fps": {
+            "type": "float",
+            "doc": "Frame rate of animation",
+            "default": 10
+        },
+        "anim_period": {
+            "type": "float",
+            "doc": "Animation period in seconds",
+            "default": 2
+        },
+        "Nt": {
+            "type": "int",
+            "doc": "Number of time step in ivp",
+            "default": 10000
+        }
+    },
+    "PK": {
+        "ka": {
+            "type": "float",
+            "doc": "Absorption constant",
+            "default": 1.08
+        },
+        "Cl": {
+            "type": "float",
+            "doc": "Elimination constant(L/h/kg) ",
+            "default": 3.13
+        },
+        "Clpt": {
+            "type": "float",
+            "doc": "Intercompartmental distribution rate from plasma to tumor compartment (L/h/kg)",
+            "default": 1.74
+        },
+        "Cltp": {
+            "type": "float",
+            "doc": "Intercompartmental distribution rate from tumor to plasma compartment(L/h/kg)",
+            "default": 0.04
+        },
+        "VF": {
+            "type": "float",
+            "doc": "Apparent distribution volume (L/kg)",
+            "default": 40.5
+        },
+        "M": {
+            "type": "float",
+            "doc": "Molecular weight of the drug (g/mol)",
+            "default": 531.6
+        },
+
+        "Ct_0": {
+            "type": "float",
+            "doc": "Initial tumour amount",
+            "default": 1.4e-4
+        },
+        "Cp_0": {
+            "type": "float",
+            "doc": "Initial plasma amount",
+            "default": 1.4e-4
+        },
+        "X1": {
+            "type": "float",
+            "doc": "Dose (mg/kg)",
+            "default": 1
+        },
+         "X3": {
+            "type": "float",
+            "doc": "Dose (mg/kg)",
+            "default": 3
+        },
+         "X10": {
+            "type": "float",
+            "doc": "Dose (mg/kg)",
+            "default": 10
+        },
+        "D1": {
+            "type": "float",
+            "doc": "Dose (micromol/kg)",
+            "default": 1.88
+        },
+         "D3": {
+            "type": "float",
+            "doc": "Dose (micromol/kg)",
+            "default": 5.65
+        },
+         "D10": {
+            "type": "float",
+            "doc": "Dose (micromol/kg)",
+            "default": 18.82
+        },
+        "Dose": {
+            "type": "float",
+            "doc": "Dose (micromol/kg)",
+            "default": 1.88
+        }
+    },
+    "PD": {
+        "Imax": {
+            "type": "float",
+            "doc": "Maximum percentage decrease of pERK",
+            "default": 97
+        },
+        "IC_50": {
+            "type": "float",
+            "doc": "Drug concentration in tumour compartment which causes pERK decrease half of Imax (micromol/L)",
+            "default": 0.78
+        },
+        "h": {
+            "type": "float",
+            "doc": "Hill coefficient",
+            "default": 1
+        }
+    },
+    "ABM": {
+        "μ": {
+            "type": "float",
+            "doc": "Death rate",
+            "default": 0.828
+        },
+        "λ": {
+            "type": "float",
+            "doc": "Birth rate",
+            "default": 0.828
+        },
+        "minbaseline": {
+            "type": "float",
+            "doc": "Minimum baseline for the pERK value inside the cell",
+            "default": 0
+        },
+        "maxbaseline": {
+            "type": "float",
+            "doc": "Maximum baseline for the pERK value inside the cell",
+            "default": 200
+        },  
+        "sample_distr": {
+            "type": "str",
+            "doc": "Sample distribution for the initial pERK value inside the cell",
+            "avail": ["Random", "Uniform", "Triangular"],
+            "default" : "Random"
+        },   
+        "trep": {
+            "type": "float",
+            "doc": "Division threshold",
+            "default": 100
+        }, 
+        "tdeath": {
+            "type": "float",
+            "doc": "Death threshold",
+            "default": 50
+        }
+    },
+    "modelling": {
+        "model": {
+            "type": "str",
+            "doc": "Model type",
+            "avail": ["ODE", "ABM"],
+            "default" : "ABM"
+        }
+    },
+    "plotting": {
+        "save_plot": {
+            "type": "bool",
+            "doc": "whether to save or simply show plotted figures",
+            "default" : false
+        },
+        "print_info": {
+            "type": "bool",
+            "doc": "whether to print information related to system parameters",
+            "default" : false
+        },
+        "cmap": {
+            "type": "str",
+            "doc": "Colour map for plots",
+            "default": "RdBu"
+        },
+        "file_name": {
+            "type": "str",
+            "doc": "Filename when saving files",
+            "default": "file"
+        },
+        "folder_dir": {
+            "type": "str",
+            "doc": "Directory when saving files",
+            "default": "."
+        }
+    }  
+}
